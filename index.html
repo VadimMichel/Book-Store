@@ -3,87 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
     <script src="./scripts/templates.js"></script>
     <script src="./script.js"></script>
 
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/standartd.css">
     <link rel="stylesheet" href="./styles/assets.css">
     <title>Book Store</title>
 </head>
-<body>
+<body onload="renderBooks()">
     <header>
         <img src="./assets/img/book_store_logo.png" alt="book_store_logo">
         <h1><span>DA</span>Book Store</h1>
         <p>-get yout book here</p>
     </header>
-    <section class="book-section">
-        <div id="bookContent">
-            <h2>Name of the Book</h2>
-            <div class="book-image-area">
-                <img src="./assets/img/book_image.png" alt="book_image">
-            </div>
-            <div class="book-info">
-                <div class="price-like-area">
-                    <span id="bookPrice">
-                        19,99€
-                    </span>
-                    <div class="like-area">
-                        <span id="likesAmountContent">11212</span>
-                        <img src="./assets/img/empty_heart.png" alt="empty_heart">
-                    </div>
-                </div>
-                <table>
-                   <tr>
-                    <td>Author</td>
-                    <td>: Clara Meer</td>
-                   </tr>
-                   <tr>
-                    <td>Published year</td>
-                    <td>: 2018</td>
-                   </tr>
-                   <tr>
-                    <td>genre</td>
-                    <td>: Fantasy</td>
-                   </tr>
-                </table>
-                <div class="comments-area">
-                    <h3>Comments:</h3>
-                    <div class="comments-section">
-                        <div>
-                            <span>[name]</span>
-                            <span>:asdasdasdasdasd</span>
-                        </div>
-                        <div>
-                            <span>[name]</span>
-                            <span>:asdasdasdasdasd</span>
-                        </div>
-                        <div>
-                            <span>[name]</span>
-                            <span>:asdasdasdasdasd</span>
-                        </div>
-                        <div>
-                            <span>[name]</span>
-                            <span>:asdasdasdasdasd</span>
-                        </div>
-                        <div>
-                            <span>[name]</span>
-                            <span>:asdasdasdasdasd</span>
-                        </div>
-                        <div>
-                            <span>[name]</span>
-                            <span>:asdasdasdasdasd</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="comments-input">
-                    <input type="text" placeholder="Write your comment ...">
-                    <img src="./assets/img/paper_airplane.png" alt="paper_airplane">
-                </div>
-            </div>
-        </div>
+    <section id="bookSection">
     </section>
 </body>
 </html>

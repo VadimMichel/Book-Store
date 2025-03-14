@@ -20,12 +20,14 @@ header p{
 
 }
 
-.book-section{
+#bookSection{
     background-color: rgb(5,23,30);
     min-height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding-top: 40px;
+    gap: 40px;
 }
 
 #bookContent{
@@ -93,10 +95,8 @@ header p{
 }
 
 .comments-section{
-    min-height: 70px;
-    max-height: 70px;
+   
     overflow: auto;
-    
 }
 
 .comments-input{
