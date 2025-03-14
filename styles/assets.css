@@ -1,0 +1,36 @@
+header{
+    display: flex;
+    align-items: center;
+    background-color: rgb(8,33,41);
+    gap: 12px;
+    padding-left: 32px;
+    height: 100px;
+}
+
+h1{
+    color: rgb(252,255,255);
+}
+
+h1 span{
+    color: rgb(244,98,89);
+}
+
+header p{
+    color: rgb(252,255,255);
+
+}
+
+.book-section{
+    background-color: rgb(5,23,30);
+    min-height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+#bookContent{
+    background-color: rgb(13,50,64);
+    width: 800px;
+    height: 600px;
+    border-radius: 24px;
+}
