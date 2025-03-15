@@ -193,7 +193,8 @@ function getBookTemplate(indexBooks){
                     </span>
                     <div class="like-area">
                         <span id="likesAmountContent">${books[indexBooks].likes}</span>
-                        <img src="./assets/img/empty_heart.png" alt="empty_heart">
+                        <img id="emptyHeartImage${indexBooks}" onclick="likeBook(${indexBooks}, ${1}, 'emptyHeartImage', 'heartImage')" src="./assets/img/empty_heart.png" alt="empty_heart">
+                        <img id="heartImage${indexBooks}" class="d_none" onclick="likeBook(${indexBooks}, ${-1}, 'heartImage', 'emptyHeartImage')" src="./assets/img/heart.png" alt="empty_heart">
                     </div>
                 </div>
                 <table>
@@ -211,13 +212,10 @@ function getBookTemplate(indexBooks){
                    </tr>
                 </table>
                 <div class="comments-area">
-                    <h3>Comments:</h3>
-                    <table id="commitContant${indexBooks}" class="comments-section">
-                    </table>
+                  <h3>Comments:</h3>
+                  <table id="commitContant${indexBooks}" class="comments-section"></table>
                 </div>
-                <div class="comments-input">
-                    <input type="text" placeholder="Write your comment ...">
-                    <img src="./assets/img/paper_airplane.png" alt="paper_airplane">
+                <div id="comments-input">
                 </div>
             </div>
         </div>
@@ -225,10 +223,17 @@ function getBookTemplate(indexBooks){
 }
 
 function getCommitsTemplate(indexCommits, indexBooks){
-    return `
-        <tr>
-            <td>: ${books[indexBooks].comments[indexCommits].name}</td>
-            <td>${books[indexBooks].comments[indexCommits].comment}</td>
-        </tr>
-    `
+  return `
+    <tr>
+      <td>[${books[indexBooks].comments[indexCommits].name}]</td>
+      <td>${books[indexBooks].comments[indexCommits].comment}</td>
+    </tr>
+  `
+}
+
+function getInputTemplate(indexBooks, indexCommits){
+  return `
+    <input type="text" placeholder="Write your comment ...">
+    <img onclick="addComment(${indexBooks}, ${indexCommits})" src="./assets/img/paper_airplane.png" alt="paper_airplane">
+  `
 }

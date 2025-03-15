@@ -83,6 +83,7 @@ header p{
     padding:12px;
     border-bottom: 2px solid rgb(69,131,159);
     width: 100%;
+    min-height: 96px;
 }
 
 .comments-area h3{
@@ -90,23 +91,19 @@ header p{
 }
 
 .comments-area{
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
-.comments-section{
-   
     overflow: auto;
+    min-height: 114px;
+    max-height: 114px;
 }
 
-.comments-input{
-    padding-left: 24px;
-    padding-right: 24px;
+#comments-input{
     display: flex;
     padding-top: 12px;
     gap: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
-.comments-input input{
+#comments-input input{
     padding-right: 80px;
 }
