@@ -1,3 +1,8 @@
+function init(){
+    getFromLocalStorage();
+    renderBooks();
+}
+
 function renderBooks(){
     let bookSectionContentRef = document.getElementById("bookSection");
     bookSectionContentRef.innerHTML ="";
@@ -39,6 +44,7 @@ function likeBook(indexBooks){
         books[indexBooks].liked = true;
     }
     renderBooks();
+    saveToLocalStorage();
 }
 
 function addComment(indexBooks){
@@ -51,4 +57,17 @@ function addComment(indexBooks){
     arrayComments.push(newComment);
     inputContentValue ="";
     renderBooks();}
+    saveToLocalStorage();
+}
+
+function getFromLocalStorage(){
+    let arrayBooks = JSON.parse(localStorage.getItem("books"));
+
+    if(arrayBooks != null){
+        books = arrayBooks;
+    }
+}
+
+function saveToLocalStorage(){
+    localStorage.setItem("books", JSON.stringify(books));
 }
