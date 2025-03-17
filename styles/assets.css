@@ -92,8 +92,13 @@ header p{
 
 .comments-area{
     overflow: auto;
-    min-height: 114px;
-    max-height: 114px;
+    min-height: 106px;
+    max-height: 106px;
+    scrollbar-color: #75BED9 #0D3240;
+}
+
+.comments-area::-webkit-scrollbar-track{
+    background-color: rgb(3,26,34);
 }
 
 .comments-input{
@@ -106,4 +111,23 @@ header p{
 
 .comments-input input{
     padding-right: 80px;
+}
+
+input{
+    background-color: rgb(20,69,89);
+    border: none;
+    border-bottom: 2px solid rgb(43,122,153);
+}
+
+input::placeholder{
+    color: rgb(100,138,151);
+}
+
+#bookSection{
+    padding-bottom: 32px;
+}
+
+footer{
+    background-color: rgb(8, 33, 41);
+    height: 100px;
 }

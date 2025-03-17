@@ -7,7 +7,7 @@ function renderBooks(){
     let bookSectionContentRef = document.getElementById("bookSection");
     bookSectionContentRef.innerHTML ="";
 
-    for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
+    for (let indexBooks = 1; indexBooks < books.length; indexBooks++) {
         bookSectionContentRef.innerHTML += getBookTemplate(indexBooks);
         renderCommits(indexBooks);
         renderHeart(indexBooks);
