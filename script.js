@@ -8,8 +8,6 @@ function renderBooks(){
     }
 }
 
-
-
 function renderCommits(indexBooks){
     let commitContantRef = document.getElementById(`commitContant${indexBooks}`);
     commitContantRef.innerHTML = "";
@@ -27,8 +25,13 @@ function likeBook(indexBooks, amount, element1, element2){
     document.getElementById(element2 + indexBooks).classList.remove("d_none");
 }
 
-function addComment(indexBooks, indexCommits){
-    let arrayCommentsName = books[indexBooks].comments[indexCommits].name;
-    let arrayCommitsComment = books[indexBooks].comments[indexCommits].comment;
+function addComment(indexBooks){
+    let arrayComments = books[indexBooks].comments;
+    let inputContantRef = document.getElementById(`inputContent${indexBooks}`);
+    let inputContentValue = inputContantRef.value;
+    let newComment = {"name": "Vadim", "comment": inputContentValue};
+    arrayComments.push(newComment);
     
+    inputContentValue ="";
+    renderBooks();
 }

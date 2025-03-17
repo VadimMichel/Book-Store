@@ -96,7 +96,7 @@ header p{
     max-height: 114px;
 }
 
-#comments-input{
+.comments-input{
     display: flex;
     padding-top: 12px;
     gap: 12px;
@@ -104,6 +104,6 @@ header p{
     padding-right: 24px;
 }
 
-#comments-input input{
+.comments-input input{
     padding-right: 80px;
 }
