@@ -5,6 +5,18 @@ function renderBooks(){
     for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
         bookSectionContentRef.innerHTML += getBookTemplate(indexBooks);
         renderCommits(indexBooks);
+        renderHeart(indexBooks);
+    }
+}
+
+function renderHeart(indexBooks){
+    let heartContentRef = document.getElementById(`heartContent${indexBooks}`);
+    heartContentRef.innerHTML ="";
+    if(books[indexBooks].liked == true){
+        heartContentRef.innerHTML = getHeartTemplate(indexBooks, "heart");
+    }
+    else{
+        heartContentRef.innerHTML = getHeartTemplate(indexBooks, "empty_heart");
     }
 }
 
@@ -17,12 +29,16 @@ function renderCommits(indexBooks){
     }
 }
 
-function likeBook(indexBooks, amount, element1, element2){
-    let arrayLikeBook = books[indexBooks].likes + amount;
-    books[indexBooks].likes = arrayLikeBook;
+function likeBook(indexBooks){
+    if(books[indexBooks].liked == true){
+        books[indexBooks].likes -= 1;
+        books[indexBooks].liked = false;
+    }
+    else{
+        books[indexBooks].likes += 1
+        books[indexBooks].liked = true;
+    }
     renderBooks();
-    document.getElementById(element1 + indexBooks).classList.add("d_none");
-    document.getElementById(element2 + indexBooks).classList.remove("d_none");
 }
 
 function addComment(indexBooks){
@@ -30,8 +46,9 @@ function addComment(indexBooks){
     let inputContantRef = document.getElementById(`inputContent${indexBooks}`);
     let inputContentValue = inputContantRef.value;
     let newComment = {"name": "Vadim", "comment": inputContentValue};
+
+    if(inputContentValue != ""){
     arrayComments.push(newComment);
-    
     inputContentValue ="";
-    renderBooks();
+    renderBooks();}
 }
