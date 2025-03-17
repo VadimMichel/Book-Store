@@ -17,7 +17,6 @@ h1 span{
 
 header p{
     color: rgb(252,255,255);
-
 }
 
 #bookSection{
@@ -130,4 +129,15 @@ input::placeholder{
 footer{
     background-color: rgb(8, 33, 41);
     height: 100px;
+}
+
+@media(max-width: 460px){
+    header p{
+        display: none;
+    }
+
+    header{
+        padding-left: 0;
+        justify-content: center;
+    }
 }
